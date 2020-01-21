@@ -20,6 +20,5 @@ The program should allow you to perform the following actions:
 * changing product data
 * adding / changing the delivery date
 * search / filter a product by name / genre/type
-* * search using regular expressions
 * saving the collected database to disk as a file
 * loading a saved database from the specified file
