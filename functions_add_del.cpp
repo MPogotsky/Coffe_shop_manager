@@ -10,7 +10,7 @@ void output(vector<PRODUCT_DESC> &point_prod) {
             cout << "\n";
             cout << i + 1 << ": ";
 
-            cout << point_prod[i].name << "\t ";
+            cout << point_prod[i].name<< "\t ";
 
             cout << point_prod[i].grade << "\t ";
 
@@ -40,7 +40,10 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     cout << "Please, enter the name:" << endl;
     cin >> point_prod.at(number).name;
 
-    cout << "Please, enter the grade:" << endl;
+    cout << "Please, enter the grade:\n"
+            "Roasted coffee  (1)\n"
+            "Ground coffee   (2)\n"
+            "Instant coffee  (3)" << endl;
     cin >> point_prod.at(number).grade;
 
     cout << "Please, enter the kind:" << endl;
@@ -49,10 +52,7 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     cout << "Please, enter the weight of package:" << endl;
     cin >> point_prod.at(number).package_weight;
 
-    cout << "Please, enter the type of packaging:\n"
-            "Roasted coffee  (1)\n"
-            "Ground coffee   (2)\n"
-            "Instant coffee  (3)" << endl;
+    cout << "Please, enter the type of packaging:\n"<<endl;
     cin >> point_prod.at(number).type_of_packaging;
 
     cout << "Please, enter what quantity is available in the store:" << endl;
@@ -70,8 +70,8 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     cin >> point_prod.at(number).expected_delivery_date.year;
 
     cout << "If you have any notes, please enter them. If not, press - : " << endl;
-    cin >> point_prod.at(number).notes;
-
+    string str;
+    cin>>str;
 }
 
 void function_delete_product(vector<struct PRODUCT_DESC> &prod, int element_numb) {
