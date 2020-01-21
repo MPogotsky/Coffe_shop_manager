@@ -4,11 +4,10 @@ using namespace std;
 
 int main() {
 
-    int operation;
-
     vector<PRODUCT_DESC> arr_of_prod(0);
     vector<PRODUCT_DESC> *point_arr_of_prod = &arr_of_prod;
 
+    int operation;
 
     do {
         cout << "\n\nPlease, chose an operation:";

@@ -19,7 +19,7 @@ void output_only_one(vector<PRODUCT_DESC> &point_prod, int number) {
     cout << '.' << point_prod.at(number).expected_delivery_date.year << "\t ";
 
     cout << point_prod[number].notes;
-    cout<<"\n";
+    cout << "\n";
 }
 
 void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
@@ -27,38 +27,50 @@ void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
         cout << "Sorry, your list is empty." << endl;
     } else {
         string word;
-        cout << "Please, enter name, grade or kind of coffee to search for: " << endl;
-        cin >> word;
+        cout << "Please, chose with the help of what word you want to search product: " << endl;
+        cout << "Name\t(1)\nGrade\t(2)\nKind\t(3)" << endl;
+        int j;
         char *str;
-        for (int i = 0; i < arr_prod.size(); i++) {
-            for (int j = 1; j <= 3; j++) {
-                switch (j) {
-                    case c_name:
-                        str = arr_prod.at(i).name;
-                        if (str == word) {
-                            cout << "You were searching for the product: " << endl;
-                            output_only_one(arr_prod, i);
-                        }
-                        break;
-                    case c_grade:
-                        str = arr_prod.at(i).grade;
-                        if (str == word) {
-                            cout << "You were searching for the product: " << endl;
-                            output_only_one(arr_prod, i);
-                        }
-                        break;
-                    case c_kind:
-                        str = arr_prod.at(i).kind;
-                        if (str == word) {
-                            cout << "You were searching for the product: " << endl;
-                            output_only_one(arr_prod, i);
-                        }
-                        break;
-                    default:
-                        break;
+        cin >> j;
+        switch (j) {
+            case c_name:
+                cout << "Please, enter name of coffee to search for: " << endl;
+                cin >> word;
+                for (int i = 0; i < arr_prod.size(); i++) {
+                    str = arr_prod.at(i).name;
+                    if (str == word) {
+                        cout << "You were searching for the product: " << endl;
+                        output_only_one(arr_prod, i);
+                    }
                 }
-            }
+                break;
+            case c_grade:
+                cout << "Please, enter grade of coffee to search for: " << endl;
+                cin >> word;
+                for (int i = 0; i < arr_prod.size(); i++) {
+                    str = arr_prod.at(i).grade;
+                    if (str == word) {
+                        cout << "You were searching for the product: " << endl;
+                        output_only_one(arr_prod, i);
+                    }
+                }
+                break;
+            case c_kind:
+                cout << "Please, enter kind of coffee to search for: " << endl;
+                cin >> word;
+                for (int i = 0; i < arr_prod.size(); i++) {
+                    str = arr_prod.at(i).kind;
+                    if (str == word) {
+                        cout << "You were searching for the product: " << endl;
+                        output_only_one(arr_prod, i);
+                    }
+                }
+                break;
+            default:
+                break;
         }
     }
 }
+
+
 
