@@ -47,9 +47,9 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     cin >> point_prod.at(number).name;
 
     cout << "Please, enter the grade:" << endl;
-    cout << "Roasted\n"
-            "Ground\n"
-            "Instant" << endl;
+    cout << "Arabica\n"
+            "Robusta\n"
+            "Arabica/Robusta" << endl;
     cin >> point_prod.at(number).grade;
 
     cout << "Please, enter the kind:\n"

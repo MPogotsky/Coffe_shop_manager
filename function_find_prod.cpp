@@ -55,7 +55,7 @@ void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
                 cout << "Please, enter grade of coffee to search for: " << endl;
                 cout << "Arabika\n"
                         "Robusta\n"
-                        "Arabika\Robusta" << endl;
+                        "Arabika/Robusta" << endl;
                 cin >> word;
                 for (int i = 0; i < arr_prod.size(); i++) {
                     str = arr_prod.at(i).grade;
