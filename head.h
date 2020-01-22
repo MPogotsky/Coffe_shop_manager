@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <iomanip>
 
 struct DELIVERY {
     char day[3];
@@ -29,12 +30,11 @@ enum operations {
     add_product = 1,                          //1
     delete_product,                           //2
     edit_info_about_product,                  //3
-    find_prod, //name,variety,type    //4
-    find_with_regular_phrases,                //5
-    save_database_as_file,                    //6
-    load_database_from_file,                  //7
-    show,
-    stop = 9                                  //9
+    find_prod, //name,variety,type            //4
+    save_database_as_file,                    //5
+    load_database_from_file,                  //6
+    show,                                     //7
+    stop = 8                                  //8
 };
 
 enum info_about_product {

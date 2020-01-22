@@ -15,13 +15,12 @@ int main() {
                 "\nDelete product                    (2)"
                 "\nEdit info about product           (3)"
                 "\nFind product                      (4)"
-                "\nFind product with regular phrases (5)"
-                "\nSave data as file                 (6)"
-                "\nLoad data from file               (7)"
-                "\nShow                              (8)"
-                "\nExit                              (9)" << endl;
+                "\nSave data as file                 (5)"
+                "\nLoad data from file               (6)"
+                "\nShow                              (7)"
+                "\nExit                              (8)" << endl;
 
-        cout << "\nEnter number of operation:" << endl;
+        cout << "\nEnter number of operation, and don`t forget to save your data: " << endl;
         cin >> operation;
 
         switch (operation) {
@@ -50,6 +49,7 @@ int main() {
                 funct_find_product(*point_arr_of_prod);
                 break;
             default:
+                save_data(*point_arr_of_prod);
                 break;
         }
     } while (operation != stop);

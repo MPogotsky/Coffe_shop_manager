@@ -31,7 +31,7 @@ void function_to_edit_info(vector<PRODUCT_DESC> &arr_prod) {
     output(arr_prod);
 
     do {
-        cout << "\n\nPlease enter the product number whose information you want to edit, or"
+        cout << "\nPlease enter the product number whose information you want to edit, or"
                 "enter 0 to exit to main menu: " << endl;
 
         cin >> number_of_edit_prod;
@@ -66,7 +66,10 @@ void function_to_edit_info(vector<PRODUCT_DESC> &arr_prod) {
                 cin >> arr_prod.at(number_of_edit_prod - 1).grade;
                 break;
             case c_kind:
-                cout << "Please, enter new kind:" << endl;
+                cout << "Please, enter new kind:\n"
+                        "Roasted\n"
+                        "Ground\n"
+                        "Instant" << endl;
                 cin >> arr_prod.at(number_of_edit_prod - 1).kind;
                 break;
             case c_weight:
