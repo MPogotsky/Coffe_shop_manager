@@ -29,7 +29,6 @@ void save_data(vector<PRODUCT_DESC> &arr_prod) {
         DataBase << "\n";
     }
     DataBase.close();
-    cout << "Saved.";
 }
 
 void load_data(vector<PRODUCT_DESC> &arr_prod) {
