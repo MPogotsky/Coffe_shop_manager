@@ -1,5 +1,5 @@
 # TEMAT_12_PROJ
-Software for managing a tea and coffee shop.
+Software for managing coffee shop.
 
 Each product (coffee/tea) is characterized by the following data entry:
 * name - a character table with a maximum length of 256 characters
