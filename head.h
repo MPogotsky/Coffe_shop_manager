@@ -10,9 +10,9 @@
 #include <iomanip>
 
 struct DELIVERY {
-    char day[3];
-    char month[3];
-    char year[5];
+    int day;
+    int month;
+    int year;
 };
 
 struct PRODUCT_DESC {
@@ -48,15 +48,16 @@ enum info_about_product {
     c_notes,
 };
 
-
 #include "functions_add_del.cpp"
 #include "function_to_edit.cpp"
 #include "function_save_load_data.cpp"
 #include "function_find_prod.cpp"
 
-void function_add_product(vector<PRODUCT_DESC> &point_prod);
+void is_file_empty(vector<PRODUCT_DESC> &point_prod);
 
-void function_delete_product(vector<PRODUCT_DESC> &prod, int element_numb);
+void function_add_product(vector<struct PRODUCT_DESC> &point_prod);
+
+void function_delete_product(vector<struct PRODUCT_DESC> &prod, int element_numb);
 
 void output(vector<PRODUCT_DESC> &point_prod);
 

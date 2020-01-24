@@ -10,7 +10,7 @@ void output(vector<PRODUCT_DESC> &point_prod) {
         for (int i = 0; i < point_prod.size(); ++i) {
             if (i == 0) {
                 cout
-                        << "N|    Name     |        Grade         |    Kind    |   Weight |  Packaging  | Quantity | Delivery date |  Notes   ";
+                        << "N|    Name     |        Grade         |    Kind    | Weight(g)|  Packaging  | Quantity | Delivery date |  Notes   ";
             }
             cout << "\n";
             cout << i + 1 << ":";
@@ -27,8 +27,18 @@ void output(vector<PRODUCT_DESC> &point_prod) {
 
             cout << setw(5) << left << point_prod[i].quantity << " \t ";
 
-            cout << point_prod.at(i).expected_delivery_date.day;
-            cout << '.' << point_prod.at(i).expected_delivery_date.month;
+            if (point_prod.at(i).expected_delivery_date.day < 10) {
+                cout << '0' << point_prod.at(i).expected_delivery_date.day;
+            } else {
+                cout << point_prod.at(i).expected_delivery_date.day;
+            }
+
+            if (point_prod.at(i).expected_delivery_date.month < 10) {
+                cout << '.' << '0' << point_prod.at(i).expected_delivery_date.month;
+            } else {
+                cout << '.' << point_prod.at(i).expected_delivery_date.month;
+            }
+
             cout << '.' << point_prod.at(i).expected_delivery_date.year << " \t ";
 
             cout << point_prod[i].notes;
@@ -43,8 +53,10 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     number = point_prod.size();
     point_prod.push_back(Product);
 
+
     cout << "Please, enter the name:" << endl;
     cin >> point_prod.at(number).name;
+
 
     cout << "Please, enter the grade:" << endl;
     cout << "Arabica\n"
@@ -52,17 +64,21 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
             "Arabica/Robusta" << endl;
     cin >> point_prod.at(number).grade;
 
+
     cout << "Please, enter the kind:\n"
             "Roasted\n"
             "Ground\n"
             "Instant" << endl;
     cin >> point_prod.at(number).kind;
 
+
     cout << "Please, enter the weight of package in grams:" << endl;
     cin >> point_prod.at(number).package_weight;
 
+
     cout << "Please, enter the type of packaging: " << endl;
     cin >> point_prod.at(number).type_of_packaging;
+
 
     cout << "Please, enter what quantity is available in the store:" << endl;
     cin >> point_prod.at(number).quantity;
@@ -75,12 +91,43 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
     } else {
         cout << "Please, enter the date of receipt of the product in the store (DD.MM.YYYY): " << endl;
     }
+
+
     cout << "Day: " << endl;
     cin >> point_prod.at(number).expected_delivery_date.day;
+    if (point_prod.at(number).expected_delivery_date.day <= 0) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.day;
+    }
+    if (point_prod.at(number).expected_delivery_date.day > 31) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.day;
+    }
+
+
     cout << "Month: " << endl;
     cin >> point_prod.at(number).expected_delivery_date.month;
+    if (point_prod.at(number).expected_delivery_date.month <= 0) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.month;
+    }
+    if (point_prod.at(number).expected_delivery_date.month > 12) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.month;
+    }
+
+
     cout << "Year: " << endl;
     cin >> point_prod.at(number).expected_delivery_date.year;
+    if (point_prod.at(number).expected_delivery_date.year <= 1990) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.year;
+    }
+    if (point_prod.at(number).expected_delivery_date.year > 3000) {
+        cout << "ERROR, please, try again: " << endl;
+        cin >> point_prod.at(number).expected_delivery_date.year;
+    }
+
 
     cout << "If you have any notes, please enter them. If not, press - : " << endl;
     cin >> point_prod.at(number).notes;

@@ -9,6 +9,8 @@ int main() {
 
     int operation;
 
+    is_file_empty(*point_arr_of_prod);
+
     do {
         cout << "\n\nPlease, chose an operation:";
         cout << "\nAdd product                       (1)"

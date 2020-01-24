@@ -1,7 +1,5 @@
 void output_only_one(vector<PRODUCT_DESC> &point_prod, int number) {
-    cout
-            << "N|    Name     |        Grade         |    Kind    |   Weight |  Packaging  | Quantity | Delivery date |  Notes   "
-            << endl;
+
     cout << number + 1 << ":";
 
     cout << setw(5) << left << point_prod[number].name << " \t ";
@@ -39,10 +37,12 @@ void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
             case c_name:
                 cout << "Please, enter name of coffee to search for: " << endl;
                 cin >> word;
+                cout
+                        << "N|    Name     |        Grade         |    Kind    |   Weight |  Packaging  | Quantity | Delivery date |  Notes   "
+                        << endl;
                 for (int i = 0; i < arr_prod.size(); i++) {
                     str = arr_prod.at(i).name;
                     if (str == word) {
-                        cout << "You were searching for the product: " << endl;
                         output_only_one(arr_prod, i);
                         result++;
                     }
@@ -57,10 +57,12 @@ void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
                         "Robusta\n"
                         "Arabika/Robusta" << endl;
                 cin >> word;
+                cout
+                        << "N|    Name     |        Grade         |    Kind    |   Weight |  Packaging  | Quantity | Delivery date |  Notes   "
+                        << endl;
                 for (int i = 0; i < arr_prod.size(); i++) {
                     str = arr_prod.at(i).grade;
                     if (str == word) {
-                        cout << "You were searching for the product: " << endl;
                         output_only_one(arr_prod, i);
                         result++;
                     }
@@ -75,10 +77,12 @@ void funct_find_product(vector<PRODUCT_DESC> arr_prod) {
                         "Ground\n"
                         "Instant" << endl;
                 cin >> word;
+                cout
+                        << "N|    Name     |        Grade         |    Kind    |   Weight |  Packaging  | Quantity | Delivery date |  Notes   "
+                        << endl;
                 for (int i = 0; i < arr_prod.size(); i++) {
                     str = arr_prod.at(i).kind;
                     if (str == word) {
-                        cout << "You were searching for the product: " << endl;
                         output_only_one(arr_prod, i);
                         result++;
                     }

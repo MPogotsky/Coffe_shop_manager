@@ -3,23 +3,54 @@
 using namespace std;
 
 void function_editing_delivery(vector<PRODUCT_DESC> &point_prod, int number_of_edit_prod) {
+
     cout << "Please, enter what exactly you want to edit: ";
     cout << "\nDate   (1)"
             "\nMonth  (2)"
             "\nYear   (3)" << endl;
     int number_of_edit_character;
     cin >> number_of_edit_character;
+
+//Zmieniamy dzień
     if (number_of_edit_character == 1) {
         cout << "Please, enter another date: " << endl;
         cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.day;
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.day <= 0) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.day;
+        }
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.day > 31) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.day;
+        }
     }
+
+//Zmieniamy miesiąc
     if (number_of_edit_character == 2) {
         cout << "Please, enter another month: " << endl;
         cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.month;
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.month <= 0) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.month;
+        }
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.month > 12) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.month;
+        }
     }
+
+//Zmieniamy rok
     if (number_of_edit_character == 3) {
         cout << "Please, enter another year: " << endl;
         cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.year;
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.year <= 1990) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.year;
+        }
+        if (point_prod.at(number_of_edit_prod - 1).expected_delivery_date.year > 3000) {
+            cout << "ERROR, please, try again: " << endl;
+            cin >> point_prod.at(number_of_edit_prod - 1).expected_delivery_date.year;
+        }
     }
 }
 
@@ -31,7 +62,7 @@ void function_to_edit_info(vector<PRODUCT_DESC> &arr_prod) {
     output(arr_prod);
 
     do {
-        cout << "\nPlease enter the product number whose information you want to edit, or"
+        cout << "\nPlease enter the product number whose information you want to edit, or "
                 "enter 0 to exit to main menu: " << endl;
 
         cin >> number_of_edit_prod;
@@ -83,6 +114,10 @@ void function_to_edit_info(vector<PRODUCT_DESC> &arr_prod) {
             case c_quantity:
                 cout << "Please, enter new quantity that is available in the store:" << endl;
                 cin >> arr_prod.at(number_of_edit_prod - 1).quantity;
+                if (arr_prod.at(number_of_edit_prod-1).quantity < 0) {
+                    cout << "ERROR, please, try again: " << endl;
+                    cin >> arr_prod.at(number_of_edit_prod-1).quantity;
+                }
                 break;
             case c_delivery:
                 function_editing_delivery(arr_prod, number_of_edit_prod);

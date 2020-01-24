@@ -65,3 +65,27 @@ void load_data(vector<PRODUCT_DESC> &arr_prod) {
         cout << "ERROR" << endl;
     }
 }
+
+void is_file_empty(vector<PRODUCT_DESC> &point_prod) {
+
+    ifstream DataBase("D:\\C++PROJECTS\\TEMAT_12_PROJ\\DataBase.txt");
+
+    int operation;
+
+    long file_size;
+    DataBase.seekg(0, ios::end);
+    file_size = DataBase.tellg();
+    if (file_size != 0) {
+        cout << "You already have data, do you want to load it?" << endl;
+        cout << "        Yes(1)                  No(2) " << endl;
+        cin >> operation;
+        if (operation == 1) {
+            load_data(point_prod);
+        } else {
+            DataBase.close();
+        }
+    } else {
+        DataBase.close();
+    }
+
+}
