@@ -5,9 +5,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <string>
+
 #include <sstream>
 #include <iomanip>
+#include <cstring>
 
 struct DELIVERY {
     int day;
@@ -19,7 +20,7 @@ struct PRODUCT_DESC {
     char name[256];
     char grade[256];
     char kind[256];
-    char package_weight[50];
+    int package_weight;
     char type_of_packaging[50];
     int quantity;
     DELIVERY expected_delivery_date;

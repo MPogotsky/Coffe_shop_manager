@@ -55,29 +55,33 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
 
 
     cout << "Please, enter the name:" << endl;
-    cin >> point_prod.at(number).name;
-
+    cin.ignore();
+    cin.getline(point_prod.at(number).name, 256);
 
     cout << "Please, enter the grade:" << endl;
     cout << "Arabica\n"
             "Robusta\n"
             "Arabica/Robusta" << endl;
-    cin >> point_prod.at(number).grade;
+    cin.ignore();
+    cin.getline(point_prod.at(number).grade, 256);
 
 
     cout << "Please, enter the kind:\n"
             "Roasted\n"
             "Ground\n"
             "Instant" << endl;
-    cin >> point_prod.at(number).kind;
+    cin.ignore();
+    cin.getline(point_prod.at(number).kind, 256);
 
 
     cout << "Please, enter the weight of package in grams:" << endl;
+    cin.ignore();
     cin >> point_prod.at(number).package_weight;
 
 
     cout << "Please, enter the type of packaging: " << endl;
-    cin >> point_prod.at(number).type_of_packaging;
+    cin.ignore();
+    cin.getline(point_prod.at(number).type_of_packaging, 256);
 
 
     cout << "Please, enter what quantity is available in the store:" << endl;
@@ -130,7 +134,8 @@ void function_add_product(vector<struct PRODUCT_DESC> &point_prod) {
 
 
     cout << "If you have any notes, please enter them. If not, press - : " << endl;
-    cin >> point_prod.at(number).notes;
+    cin.ignore();
+    cin.getline(point_prod.at(number).notes, 1000);
 }
 
 void function_delete_product(vector<struct PRODUCT_DESC> &prod, int element_numb) {

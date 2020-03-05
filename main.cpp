@@ -40,7 +40,7 @@ int main() {
                 break;
             case save_database_as_file:
                 save_data(*point_arr_of_prod);
-                cout << "Saved."<<endl;
+                cout << "Saved." << endl;
                 break;
             case show:
                 output(*point_arr_of_prod);
@@ -52,7 +52,7 @@ int main() {
                 funct_find_product(*point_arr_of_prod);
                 break;
             default:
-                cout<<"Data will be saved automatically."<<endl;
+                cout << "Data will be saved automatically." << endl;
                 save_data(*point_arr_of_prod);
                 break;
         }

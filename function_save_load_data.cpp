@@ -1,7 +1,5 @@
 void save_data(vector<PRODUCT_DESC> &arr_prod) {
 
-// Jeżeli chcemy sami określić ściezką do pliku
-//                | | | | | | | |
 //    string file_path;
 //    cout << "Please, enter path, where you want to save your data, and add name .txt: " << endl;
 //    cin >> file_path;
@@ -9,24 +7,23 @@ void save_data(vector<PRODUCT_DESC> &arr_prod) {
 
     ofstream DataBase("D:\\C++PROJECTS\\TEMAT_12_PROJ\\DataBase.txt");
     for (int i = 0; i < arr_prod.size(); i++) {
-        DataBase << arr_prod[i].name << "\t ";
+        DataBase << arr_prod[i].name << endl;
 
-        DataBase << arr_prod[i].grade << "\t ";
+        DataBase << arr_prod[i].grade << endl;
 
-        DataBase << arr_prod[i].kind << "\t ";
+        DataBase << arr_prod[i].kind << endl;
 
-        DataBase << arr_prod[i].package_weight << "\t ";
+        DataBase << arr_prod[i].package_weight << endl;
 
-        DataBase << arr_prod[i].type_of_packaging << "\t ";
+        DataBase << arr_prod[i].type_of_packaging << endl;
 
-        DataBase << arr_prod[i].quantity << "\t ";
+        DataBase << arr_prod[i].quantity << endl;
 
-        DataBase << arr_prod.at(i).expected_delivery_date.day << "\t ";
-        DataBase << arr_prod.at(i).expected_delivery_date.month << "\t ";
-        DataBase << arr_prod.at(i).expected_delivery_date.year << "\t ";
+        DataBase << arr_prod.at(i).expected_delivery_date.day << endl;
+        DataBase << arr_prod.at(i).expected_delivery_date.month << endl;
+        DataBase << arr_prod.at(i).expected_delivery_date.year << endl;
 
-        DataBase << arr_prod[i].notes;
-        DataBase << "\n";
+        DataBase << arr_prod[i].notes << endl;
     }
     DataBase.close();
 }
@@ -34,8 +31,6 @@ void save_data(vector<PRODUCT_DESC> &arr_prod) {
 void load_data(vector<PRODUCT_DESC> &arr_prod) {
     PRODUCT_DESC Product;
 
-// Jeżeli chcemy sami określić ściezką do pliku
-//                | | | | | | | |
 //    string file_path;
 //    cout << "Please, enter path, where you want to load data, and add name .txt: " << endl;
 //    cin >> file_path;
@@ -45,8 +40,10 @@ void load_data(vector<PRODUCT_DESC> &arr_prod) {
 
     if (DataBase.is_open()) {
         while (!DataBase.eof()) {
+
             arr_prod.push_back(Product);
-            int i = arr_prod.size() - 1;
+            int i = arr_prod.size() -1;
+
             DataBase >> arr_prod.at(i).name;
             DataBase >> arr_prod.at(i).grade;
             DataBase >> arr_prod.at(i).kind;
@@ -57,6 +54,7 @@ void load_data(vector<PRODUCT_DESC> &arr_prod) {
             DataBase >> arr_prod.at(i).expected_delivery_date.month;
             DataBase >> arr_prod.at(i).expected_delivery_date.year;
             DataBase >> arr_prod.at(i).notes;
+
         }
         DataBase.close();
         arr_prod.pop_back();
@@ -68,7 +66,7 @@ void load_data(vector<PRODUCT_DESC> &arr_prod) {
 
 void is_file_empty(vector<PRODUCT_DESC> &point_prod) {
 
-    ifstream DataBase("D:\\C++PROJECTS\\TEMAT_12_PROJ\\DataBase.txt");
+    ifstream DataBase("D:\\C++PROJECTS\\TEMAT_12_PROJ\\DataBas.txt");
 
     int operation;
 
@@ -84,8 +82,5 @@ void is_file_empty(vector<PRODUCT_DESC> &point_prod) {
         } else {
             DataBase.close();
         }
-    } else {
-        DataBase.close();
     }
-
 }
